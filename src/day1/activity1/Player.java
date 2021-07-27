@@ -18,7 +18,6 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
         String firstName = scanner.next();
         String lastName = scanner.next();
-
         System.out.println(firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase() + " " + lastName.toUpperCase());
 
     }
