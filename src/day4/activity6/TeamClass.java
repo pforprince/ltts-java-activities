@@ -26,10 +26,10 @@ public class TeamClass implements Comparable<TeamClass> {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return name + ", playerList=" + playerList + '\n';
-    }
+//    @Override
+//    public String toString() {
+//        return name + ", playerList=" + playerList + '\n';
+//    }
 
     public List<Player> getPlayerList() {
         Collections.sort(playerList);

@@ -19,7 +19,7 @@ public class Player implements Comparable<Player> {
 
     @Override
     public String toString() {
-        return  "--" + name;
+        return name;
     }
 
     public Player(String name) {

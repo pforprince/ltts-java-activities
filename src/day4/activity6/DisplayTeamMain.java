@@ -6,6 +6,8 @@
 package day4.activity6;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -37,7 +39,13 @@ public class DisplayTeamMain {
                 map.put(splitAr[0], t2);
             }
         }
-        System.out.println(map);
+        for (Map.Entry<String, TeamClass> entry : map.entrySet()) {
+            System.out.println(entry.getKey());
+            Collections.sort(entry.getValue().playerList);
+            for (int i = 0; i < entry.getValue().playerList.size(); i++) {
+                System.out.println("--" + entry.getValue().playerList.get(i));
+            }
+        }
     }
 }
 
