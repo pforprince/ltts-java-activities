@@ -5,15 +5,10 @@
  */
 package day4.activity6;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
@@ -25,7 +20,7 @@ public class DisplayTeamMain {
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
         scanner.nextLine();
-        Map<String, TeamClass> map = new HashMap<>();
+        Map<String, TeamClass> map = new TreeMap<>();
 
         for (int i = 0; i < size; i++) {
             String input = scanner.nextLine();

@@ -3,32 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package day4.activity6;
+package day5.activity1;
 
 /**
  *
  * @author Benzee
  */
-public class Player implements Comparable<Player> {
+public class Bowler {
 
     private String name;
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
-    public Player(String name) {
-        this.name = name;
-    }
-
-    public Player() {
-    }
-
-    @Override
-    public int compareTo(Player player) {
-        return this.name.compareTo(player.getName());
-    }
 
     public String getName() {
         return name;

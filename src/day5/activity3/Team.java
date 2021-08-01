@@ -3,32 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package day4.activity6;
+package day5.activity3;
 
 /**
  *
  * @author Benzee
  */
-public class Player implements Comparable<Player> {
+public class Team {
+
+    public Team(String name, long noOfMatches) {
+        this.name = name;
+        this.noOfMatches = noOfMatches;
+    }
 
     private String name;
-
-    @Override
-    public String toString() {
-        return name;
-    }
-
-    public Player(String name) {
-        this.name = name;
-    }
-
-    public Player() {
-    }
-
-    @Override
-    public int compareTo(Player player) {
-        return this.name.compareTo(player.getName());
-    }
+    private long noOfMatches;
 
     public String getName() {
         return name;
@@ -36,5 +25,13 @@ public class Player implements Comparable<Player> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public long getNoOfMatches() {
+        return noOfMatches;
+    }
+
+    public void setNoOfMatches(long noOfMatches) {
+        this.noOfMatches = noOfMatches;
     }
 }
