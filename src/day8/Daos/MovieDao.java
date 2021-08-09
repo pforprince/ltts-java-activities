@@ -1,15 +1,19 @@
-package day8;
+package day8.Daos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import day8.Movie;
+import day8.myConnection;
 
 public class MovieDao {
 
 	Connection connection= myConnection.getConnection();
 
-	public boolean addMovie(Movie movie) {
+	public boolean addMovie(Movie movie) throws SQLException {
 		boolean movieAdded = false;
 		try {
 			String query = "insert into movie(name, releaseDate, language) values(?,?,?)";
@@ -23,10 +27,13 @@ public class MovieDao {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		finally {
+			connection.close();
+		}
 		return movieAdded;
 	}
 
-	public java.util.List<Movie> getAllMovies() {
+	public java.util.List<Movie> getAllMovies() throws SQLException {
 		java.util.List<Movie> allMovies = new ArrayList<>();
 		try {
 			String query = "select * from movie";
@@ -40,10 +47,13 @@ public class MovieDao {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+		finally {
+			connection.close();
+		}
 		return allMovies;
 	}
 
-	boolean updateMovie(Movie movie, int id) {
+	public boolean updateMovie(Movie movie, int id) throws SQLException {
 		boolean movieUpdated = false;
 		try {
 			String query = "update movie set name=?, releaseDate=?, language=?";
@@ -56,6 +66,9 @@ public class MovieDao {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+		}
+		finally {
+			connection.close();
 		}
 		return movieUpdated;
 	}
